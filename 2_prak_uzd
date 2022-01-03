@@ -1,15 +1,24 @@
-#include "Rajonas.h"
+#ifndef CLASSUZDUOTIS_RAJONAS_H
+#define CLASSUZDUOTIS_RAJONAS_H
 
-Rajonas::Rajonas(const std::string &vardas, int zmoniuKiekis) : Vietovarde(vardas, zmoniuKiekis), pavadinimas(vardas), zmoniuSK(zmoniuKiekis) {}
+#include <iostream>
+#include "Vietovarde.h"
 
-std::string Rajonas::getPavadinimas() {
-    return pavadinimas;
-}
 
-void Rajonas::informacija() {
-    std::cout<<pavadinimas<<" turi maziausiai "<<zmoniuSK<<" gyventojus"<<std::endl;
-}
+class Rajonas : public Vietovarde{
+private:
+    std::string pavadinimas;
+    int zmoniuSK;
 
-int Rajonas::zmoniuSkaicius() {
-    return zmoniuSK;
-}
+public:
+
+    void informacija();
+    int zmoniuSkaicius();
+    std::string getPavadinimas();
+
+    Rajonas(const std::string &vardas, int zmoniuKiekis);
+
+};
+
+
+#endif //CLASSUZDUOTIS_RAJONAS_H
