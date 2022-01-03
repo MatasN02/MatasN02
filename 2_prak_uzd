@@ -1,25 +1,29 @@
-#include "Vietovarde.h"
+#ifndef CLASSUZDUOTIS_VIETOVARDE_H
+#define CLASSUZDUOTIS_VIETOVARDE_H
 
-Vietovarde::Vietovarde(const std::string &vardas) : pavadinimas(vardas), zmoniuSk(0) {
-}
-
-Vietovarde::Vietovarde(const std::string &vardas, int zmoniusk) : pavadinimas(vardas), zmoniuSk(zmoniusk){
-}
-
-std::string Vietovarde::getPavadinimas() {
-    return pavadinimas;
-}
-
-void Vietovarde::getZmoniuskaicius() {
-    if(zmoniuSk == -1) std::cout<<"Vietovardes "<<getPavadinimas()<<" gyventoju skaicius nenurodytas"<<std::endl;
-    else std::cout<<"Vietovardes "<<getPavadinimas()<<" gyventoju skaicius yra "<<zmoniuSk<<std::endl;
-}
+#include <iostream>
+#include <vector>
 
 
-void Vietovarde::prideti(Vietovarde *vietovarde) {
-    vietovardes.push_back(vietovarde);
-}
+class Vietovarde {
+private:
+    std::string pavadinimas;
+    std::vector<Vietovarde*> vietovardes;
+    int zmoniuSk;
+public:
+    int zmoniuSkaicius();
+    void informacija();
+    std::string getPavadinimas();
+    void getZmoniuskaicius();
 
+
+    void prideti(Vietovarde *vietovarde);
+    Vietovarde(const std::string &vardas);
+    Vietovarde(const std::string &vardas, int zmoniusk);
+};
+
+
+#endif //CLASSUZDUOTIS_VIETOVARDE_H
 
 
 int IsViso = 0;
