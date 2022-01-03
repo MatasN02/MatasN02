@@ -1,6 +1,15 @@
-cmake_minimum_required(VERSION 3.20)
-project(ClassUzduotis)
+#include "Rajonas.h"
 
-set(CMAKE_CXX_STANDARD 14)
+Rajonas::Rajonas(const std::string &vardas, int zmoniuKiekis) : Vietovarde(vardas, zmoniuKiekis), pavadinimas(vardas), zmoniuSK(zmoniuKiekis) {}
 
-add_executable(ClassUzduotis main.cpp Vietovarde.cpp Vietovarde.h Rajonas.cpp Rajonas.h)
+std::string Rajonas::getPavadinimas() {
+    return pavadinimas;
+}
+
+void Rajonas::informacija() {
+    std::cout<<pavadinimas<<" turi maziausiai "<<zmoniuSK<<" gyventojus"<<std::endl;
+}
+
+int Rajonas::zmoniuSkaicius() {
+    return zmoniuSK;
+}
