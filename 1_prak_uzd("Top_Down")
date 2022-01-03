@@ -1,0 +1,52 @@
+#Užduoties Nuoroda:
+https://leetcode.com/problems/convert-integer-to-the-sum-of-two-no-zero-integers/
+
+Salyga:
+Duotas sveikasis skaičius "n", šio skaičiaus suma turi būti
+dviejų sveikųjų skaičių, kurie dešimtainėje neturi nulių. Parašykite programą,
+kuri apskaičiutų pirmąją "n" skaičiaus sumą.
+
+1. Pavyzdys: skaičius "n" yra lygus 11, o suma bus lygi 2 ir 9, nes
+skaičiai 1 ir 10 netinka, skaičius 10 dešimtainėję turi nulį.
+2. Pavyzdys: skaičius "n" yra lygus 69, o suma bus lygi 1 ir 68.
+
+#Atliktos užduoties paaiškinimas:
+14 eilutėje prasideda pagrindinė funkcija, "int main()", 16 eilutėje
+sukuriami kintamieji: n-duotasis skaičius; A-pirmojo skaičiaus suma;
+B-antrojo skaičiaus suma.
+
+23 eilutėje sukuriami dar 2 kintamieji: nulA ir nulB. Į šiuos kintamuosius
+programa įrašo 1 arbe 0, priklausomai ar tinka skaičius ar ne, nulA atitinka A, o nulB atitinka B skaičiui.
+
+24 eilutėje prasideda ciklas for, kuriame tikrina ar skaičių
+sumai bus naudojami taisiklingi skaičiai.
+
+Tiek 28, tiek 29 eilutes
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void plotas(double spind, double &PT, double pi){ //sioje funkcijoje apskaciuojamas apskritimo plotas
+    PT=pi*spind*spind;
+}
+
+void ilgis(double spind, double &IL, double pi){ //sioje funkcijoje apskaiciuojamas apskritimo ilgis
+    IL=2*pi*spind;
+}
+
+int main(){ //pagrindine funkcija
+    cout<<"Tai programa, kuri apskaiciuoja apskritimo ilgi ir plota ivedus apskritimo spinduli"<<endl;
+    cout<<endl;
+
+    double pi=3.14159;
+    double spind, PT, IL; //spind-spindulys; PT-plotas; IL-ilgis
+    cout<<"Iveskite apskritimo spinduli: ";
+    cin>>spind;
+    cout<<endl;
+
+    plotas(spind, PT, pi); //kreipiamasi i funkcijas "plotas" ir "ilgis", kad apskaiciuotu reikiamus duomenys
+    ilgis(spind, IL, pi);
+
+    cout<<"Pagal formule: PI*spindulys*spindulys, apskaiciuotas apskritimo plotas gavosi: "<<setprecision(2)<<fixed<<PT<<endl;
+    cout<<"Pagal formule: 2*PI*spindulys, apskaiciuotas apskritimo ilgis gavosi:"<<setprecision(2)<<fixed
