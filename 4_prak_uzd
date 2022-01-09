@@ -1,21 +1,18 @@
-#ifndef INC_4_UZDUOTIS_DARBUOTOJAS_H
-#define INC_4_UZDUOTIS_DARBUOTOJAS_H
+#ifndef INC_4_UZDUOTIS_LANKYTOJAS_H
+#define INC_4_UZDUOTIS_LANKYTOJAS_H
 #include<iostream>
-#include<vector>
-
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
-class Darbuotojas {
+class Lankytojas {
 private:
-    vector<Darbuotojas> darbuotojai;
-    string role;
-    string vardas;
-
+    int pageidavimas;
+    int pinigas;
 public:
-    void sukurkDarbuotoja();
-    void paskirstik();
-    void GetDarbuotojai();
+    void Pasirinkimas(int &number);
+    void pinigai(int &pinigai);
 };
 
 
-#endif //INC_4_UZDUOTIS_DARBUOTOJAS_H
+#endif //INC_4_UZDUOTIS_LANKYTOJAS_H
