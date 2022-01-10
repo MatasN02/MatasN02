@@ -1,32 +1,38 @@
-#ifndef INC_4_UZDUOTIS_MENIU_H
-#define INC_4_UZDUOTIS_MENIU_H
-#include<iostream>
-#include<vector>
-#include "Darbuotojas.h"
-#include "Lankytojas.h"
-
-using namespace std;
-
-class Meniu {
-private:
-    vector<Meniu> sarasas;
-    string pavadinimas;
-    double kaina;
-    double pirkimoKaina;
-    int prekiuSk;
-
-public:
-    void sukurkmeniu();
-    void Getsarasas();
-    void SetPrice();
-    void PirkimoKaina();
-    void SetName();
-    void prekiuInfo();
-    void prekiuUzsakymas();
-    void paruostiValgi(int pasirinkimas, int pinigas);
+#include "Meniu.h"
 
 
-};
+void Meniu::sukurkmeniu() {
+    cout<<"*Pradesim nuo meniu, kuri sudaro 5 patiekalai."<<endl;
 
+    Meniu patiekalas1;
+    patiekalas1.SetName();
+    patiekalas1.SetPrice();
+    patiekalas1.PirkimoKaina();
+    sarasas.push_back(patiekalas1);
 
-#endif //INC_4_UZDUOTIS_MENIU_H
+    Meniu patiekalas2;
+    patiekalas2.SetName();
+    patiekalas2.SetPrice();
+    patiekalas2.PirkimoKaina();
+    sarasas.push_back(patiekalas2);
+
+    Meniu patiekalas3;
+    patiekalas3.SetName();
+    patiekalas3.SetPrice();
+    patiekalas3.PirkimoKaina();
+    sarasas.push_back(patiekalas3);
+
+    Meniu patiekalas4;
+    patiekalas4.SetName();
+    patiekalas4.SetPrice();
+    patiekalas4.PirkimoKaina();
+    sarasas.push_back(patiekalas4);
+
+    Meniu patiekalas5;
+    patiekalas5.SetName();
+    patiekalas5.SetPrice();
+    patiekalas5.PirkimoKaina();
+    sarasas.push_back(patiekalas5);
+
+    cout<<"\nMeniu sekmingai sukurtas!\n"<<endl;
+}
